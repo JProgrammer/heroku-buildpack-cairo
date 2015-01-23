@@ -2,6 +2,8 @@
 # bin/compile <build-dir> <cache-dir>
 
 set -e # fail fast
+set -x          # enable debugging
+
 
 # parse params
 BUILD_DIR=$1
