@@ -66,6 +66,10 @@ export CPPPATH="\$CPPPATH:$CPPPATH"
 export CPATH="\$CPATH:$CPATH"
 EOF
 
+
+echo "\$LD_LIBRARY_PATH:${LD_LIBRARY_PATH//$BUILD_DIR//app}"
+echo "\$PKG_CONFIG_PATH:${PKG_CONFIG_PATH//$BUILD_DIR//app}"
+
 echo "-----> Building runtime environment"
 mkdir -p $BUILD_DIR/.profile.d
 
@@ -76,6 +80,4 @@ export LIBRARY_PATH="\$LIBRARY_PATH:${LIBRARY_PATH//$BUILD_DIR//app}"
 export PKG_CONFIG_PATH="\$PKG_CONFIG_PATH:${PKG_CONFIG_PATH//$BUILD_DIR//app}"
 export CPPPATH="\$CPPPATH:${CPPPATH//$BUILD_DIR//app}"
 export CPATH="\$CPATH:${CPATH//$BUILD_DIR//app}"
-echo $LD_LIBRARY_PATH
-echo $PKG_CONFIG_PATH
 EOF
